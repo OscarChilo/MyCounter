@@ -10,7 +10,8 @@ Class {
 	#name : #Counter,
 	#superclass : #Object,
 	#instVars : [
-		'count'
+		'count',
+		'new'
 	],
 	#category : #MyCounter
 }
@@ -18,4 +19,19 @@ Class {
 { #category : #accessing }
 Counter >> count [
    ^count
+]
+
+{ #category : #operations }
+Counter >> decrement [ 
+count:=count -1
+]
+
+{ #category : #operations }
+Counter >> increment [ 
+ count:=count +1
+]
+
+{ #category : #accessing }
+Counter >> startingAt: anInteger [ 
+	^ self new count: anInteger.
 ]
